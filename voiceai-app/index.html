@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme de Reconnaissance Vocale & Traduction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎤</text></svg>">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            
+            <div class="nav-menu">
+                <div class="nav-section">
+                    <h3>PRINCIPAL</h3>
+                    <a href="#dashboard" class="nav-item" data-tab="dashboard">
+                        <i class="fas fa-home"></i>
+                        <span>Tableau de Bord</span>
+                    </a>
+                    <a href="#upload" class="nav-item active" data-tab="upload">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span>Télécharger Audio</span>
+                    </a>
+                    <a href="#record" class="nav-item" data-tab="record">
+                        <i class="fas fa-microphone"></i>
+                        <span>Enregistrement Direct</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>OUTILS</h3>
+                    <a href="#history" class="nav-item" data-tab="history">
+                        <i class="fas fa-history"></i>
+                        <span>Historique</span>
+                    </a>
+                    <a href="#analytics" class="nav-item" data-tab="analytics">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Analyses</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <h3>SYSTÈME</h3>
+                    <a href="#settings" class="nav-item" data-tab="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Paramètres</span>
+                    </a>
+                    <a href="#help" class="nav-item" data-tab="help">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Aide & Support</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="logo">
+                        <div class="logo-icon">🎤</div>
+                        <span class="logo-text">VoiceAI</span>
+                    </div>
+                    <h1 id="pageTitle">Plateforme de Reconnaissance Vocale & Traduction</h1>
+                    <p class="header-subtitle">Traitement multilingue de la parole  avec précision alimentée par l'IA</p>
+                    <div class="module-info">
+                        <span class="module-badge">Module : Traitement automatique de parole</span>
+                    </div>
+                </div>
+                
+                <div class="header-right">
+                    <div class="team-info-header">
+                        <div class="team-dropdown">
+                            <button class="team-toggle" id="teamToggle">
+                                <i class="fas fa-users"></i>
+                                <span>Équipe</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="team-dropdown-content" id="teamDropdown">
+                                <h4>Équipe de Développement</h4>
+                                <div class="team-members">
+                                    <span class="team-member">Salah eddine Hajjioui</span>
+                                    <span class="team-member">Naima Saidi</span>
+                                    <span class="team-member">Ahmed Nour El Bourkadi</span>
+                                    <span class="team-member">Hind Ait Temghart</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-badge connected">
+                        <i class="fas fa-circle"></i>
+                        <span>Connecté</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content">
+                <!-- Dashboard Tab -->
+                <div class="tab-content" id="dashboard">
+                    <div class="dashboard-grid">
+                        <div class="stats-overview">
+                            <div class="stat-card">
+                                <div class="stat-icon">📊</div>
+                                <div class="stat-content">
+                                    <div class="stat-value">1,247</div>
+                                    <div class="stat-label">Fichiers Traités</div>
+                                    <div class="stat-change positive">+12.5%</div>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-icon">🎯</div>
+                                <div class="stat-content">
+                                    <div class="stat-value">94.8%</div>
+                                    <div class="stat-label">Taux de Précision</div>
+                                    <div class="stat-change positive">+2.3%</div>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-icon">⚡</div>
+                                <div class="stat-content">
+                                    <div class="stat-value">2.4s</div>
+                                    <div class="stat-label">Traitement Moyen</div>
+                                    <div class="stat-change negative">-0.8s</div>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-icon">🌍</div>
+                                <div class="stat-content">
+                                    <div class="stat-value">4</div>
+                                    <div class="stat-label">Langues</div>
+                                    <div class="stat-change neutral">Actives</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="recent-activity">
+                            <h3>Activité Récente</h3>
+                            <div class="activity-list" id="activityList">
+                                <!-- Les éléments d'activité seront remplis par JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upload Tab -->
+                <div class="tab-content active" id="upload">
+                    <div class="upload-section">
+                        <div class="upload-header">
+                            <h2>Téléchargement de Fichier Audio</h2>
+                            <p>Téléchargez vos fichiers audio pour traitement. Formats supportés : WAV, MP3, FLAC, M4A</p>
+                        </div>
+
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-icon">☁️</div>
+                            <h3>Déposez votre fichier audio ici</h3>
+                            <p>ou cliquez pour parcourir et sélectionner un fichier depuis votre ordinateur</p>
+                            <input type="file" id="audioFile" accept=".wav,.mp3,.flac,.m4a" hidden>
+                            <button class="btn btn-primary" onclick="document.getElementById('audioFile').click()">
+                                <i class="fas fa-folder-open"></i>
+                                Parcourir les Fichiers
+                            </button>
+                        </div>
+
+                        <div class="processing-config">
+                            <h3>Configuration de Traitement</h3>
+                            <p>Sélectionnez comment vous voulez traiter votre fichier audio</p>
+                            
+                            <div class="config-options">
+                                <div class="config-card active" data-mode="auto">
+                                    <div class="config-icon">✏️</div>
+                                    <h4>Traduction Automatique vers le Français</h4>
+                                    <p>Détecte automatiquement la langue source et traduit vers le français</p>
+                                </div>
+                                
+                                <div class="config-card" data-mode="transcribe">
+                                    <div class="config-icon">📄</div>
+                                    <h4>Transcription Seulement</h4>
+                                    <p>Convertit la parole en texte dans la langue originale sans traduction</p>
+                                </div>
+                                
+                                <div class="config-card" data-mode="custom">
+                                    <div class="config-icon">⚙️</div>
+                                    <h4>Traduction Personnalisée</h4>
+                                    <p>Choisissez votre langue cible préférée pour la traduction</p>
+                                    <div class="language-selector" id="languageSelector" style="display: none;">
+                                        <label for="targetLanguage">Langue cible :</label>
+                                        <select id="targetLanguage" class="form-select">
+                                            <option value="fr">Français</option>
+                                            <option value="en">Anglais</option>
+                                            <option value="es">Espagnol</option>
+                                            <option value="ar">Arabe</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Process Button -->
+                        <div class="process-section" id="processSection" style="display: none;">
+                            <button class="btn btn-primary btn-large" id="processBtn" onclick="app.processAudio()">
+                                <i class="fas fa-play"></i>
+                                Traiter le Fichier Audio
+                            </button>
+                        </div>
+                        
+                        <!-- Results Section -->
+                        <div class="results-section" id="resultsSection" style="display: none;">
+                            <div class="results-header">
+                                <h3>Résultats du Traitement</h3>
+                                <div class="processing-status" id="processingStatus">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                    <span>Traitement en cours...</span>
+                                </div>
+                            </div>
+                            
+                            <div class="results-content" id="resultsContent">
+                                <!-- Original Text -->
+                                <div class="result-card" id="originalTextCard" style="display: none;">
+                                    <div class="result-header">
+                                        <h4><i class="fas fa-microphone"></i> Texte Original</h4>
+                                        <span class="language-badge" id="detectedLanguage">Détecté</span>
+                                    </div>
+                                    <div class="result-text" id="originalText"></div>
+                                </div>
+                                
+                                <!-- Translated Text -->
+                                <div class="result-card" id="translatedTextCard" style="display: none;">
+                                    <div class="result-header">
+                                        <h4><i class="fas fa-language"></i> Texte Traduit</h4>
+                                        <span class="language-badge" id="targetLanguageBadge">Français</span>
+                                    </div>
+                                    <div class="result-text" id="translatedText"></div>
+                                    
+                                    <!-- TTS Section -->
+                                    <div class="tts-section">
+                                        <h5><i class="fas fa-volume-up"></i> Synthèse Vocale</h5>
+                                        <div class="tts-controls">
+                                            <button class="btn btn-secondary" id="playTtsBtn" onclick="playTTS()">
+                                                <i class="fas fa-play"></i>
+                                                Écouter la Traduction
+                                            </button>
+                                            <button class="btn btn-outline" id="downloadTtsBtn" onclick="downloadTTS()" style="display: none;">
+                                                <i class="fas fa-download"></i>
+                                                Télécharger Audio
+                                            </button>
+                                        </div>
+                                        <audio id="ttsAudio" controls style="display: none; width: 100%; margin-top: 10px;"></audio>
+                                    </div>
+                                </div>
+                                
+                                <!-- Action Buttons -->
+                                <div class="result-actions">
+                                    <button class="btn btn-primary" onclick="saveToHistory()">
+                                        <i class="fas fa-save"></i>
+                                        Sauvegarder
+                                    </button>
+                                    <button class="btn btn-outline" onclick="copyToClipboard()">
+                                        <i class="fas fa-copy"></i>
+                                        Copier le Texte
+                                    </button>
+                                    <button class="btn btn-outline" onclick="resetResults()">
+                                        <i class="fas fa-redo"></i>
+                                        Nouveau Traitement
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Record Tab -->
+                <div class="tab-content" id="record">
+                    <div class="record-section">
+                        <div class="record-header">
+                            <h2>Enregistrement Audio en Direct</h2>
+                            <p>Enregistrez l'audio directement depuis votre microphone pour un traitement en temps réel</p>
+                        </div>
+
+                        <div class="record-container">
+                            <div class="record-visualizer">
+                                <div class="record-button" id="recordButton" onclick="toggleRecording()">
+                                    <i class="fas fa-microphone" id="recordIcon"></i>
+                                </div>
+                                <div class="audio-waves" id="audioWaves">
+                                    <div class="wave"></div>
+                                    <div class="wave"></div>
+                                    <div class="wave"></div>
+                                    <div class="wave"></div>
+                                    <div class="wave"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="record-info">
+                                <div class="record-status" id="recordStatus">Prêt à enregistrer</div>
+                                <div class="record-timer" id="recordTimer">00:00</div>
+                            </div>
+                            
+                            <div class="record-controls">
+                                <div class="control-group">
+                                    <label>Durée d'Enregistrement</label>
+                                    <div class="slider-container">
+                                        <input type="range" id="durationSlider" min="1" max="30" value="5" class="slider">
+                                        <span id="durationValue">5 secondes</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="control-group">
+                                    <label>Mode de Traitement</label>
+                                    <select class="form-select" id="recordMode">
+                                        <option value="auto">Traduction automatique vers le français</option>
+                                        <option value="transcribe">Transcription seulement</option>
+                                        <option value="custom">Traduction personnalisée</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- History Tab -->
+                <div class="tab-content" id="history">
+                    <div class="history-section">
+                        <div class="history-header">
+                            <h2>Historique des Traitements</h2>
+                            <p>Consultez et gérez vos résultats de traitement audio précédents</p>
+                        </div>
+                        <div class="history-content" id="historyContent">
+                            <div class="empty-state">
+                                <div class="empty-icon">📂</div>
+                                <h3>Aucun historique de traitement</h3>
+                                <p>Vos résultats de traitement audio apparaîtront ici</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Tab -->
+                <div class="tab-content" id="analytics">
+                    <div class="analytics-section">
+                        <div class="analytics-header">
+                            <h2>Tableau de Bord Analytique</h2>
+                            <p>Aperçus détaillés de vos performances de traitement vocal</p>
+                        </div>
+                        <div class="analytics-content">
+                            <div class="chart-grid">
+                                <div class="chart-card">
+                                    <h3>Distribution des Langues</h3>
+                                    <canvas id="languageChart" width="400" height="200"></canvas>
+                                </div>
+                                <div class="chart-card">
+                                    <h3>Performance de Traitement</h3>
+                                    <canvas id="performanceChart" width="400" height="200"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Tab -->
+                <div class="tab-content" id="settings">
+                    <div class="settings-section">
+                        <div class="settings-header">
+                            <h2>Paramètres Système</h2>
+                            <p>Configurez vos préférences de traitement vocal</p>
+                        </div>
+                        <div class="settings-content">
+                            <div class="settings-group">
+                                <h3>Paramètres Audio</h3>
+                                <div class="setting-item">
+                                    <label>Qualité Audio par Défaut</label>
+                                    <select class="form-select">
+                                        <option>Haute Qualité (48kHz)</option>
+                                        <option>Qualité Standard (44.1kHz)</option>
+                                        <option>Compressé (22kHz)</option>
+                                    </select>
+                                </div>
+                                <div class="setting-item">
+                                    <label>Réduction de Bruit</label>
+                                    <select class="form-select">
+                                        <option>Activé</option>
+                                        <option>Désactivé</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="settings-group">
+                                <h3>Paramètres de Langue</h3>
+                                <div class="setting-item">
+                                    <label>Langue Cible par Défaut</label>
+                                    <select class="form-select">
+                                        <option>Français</option>
+                                        <option>Anglais</option>
+                                        <option>Espagnol</option>
+                                        <option>Arabe</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Help Tab -->
+                <div class="tab-content" id="help">
+                    <div class="help-section">
+                        <div class="help-header">
+                            <h2>Aide & Support</h2>
+                            <p>Obtenez de l'assistance pour utiliser la plateforme de reconnaissance vocale</p>
+                        </div>
+                        <div class="help-content">
+                            <div class="help-grid">
+                                <div class="help-card">
+                                    <div class="help-icon">📖</div>
+                                    <h3>Guide Utilisateur</h3>
+                                    <p>Apprenez à utiliser toutes les fonctionnalités de la plateforme</p>
+                                </div>
+                                <div class="help-card">
+                                    <div class="help-icon">🎥</div>
+                                    <h3>Tutoriels Vidéo</h3>
+                                    <p>Regardez des guides vidéo étape par étape</p>
+                                </div>
+                                <div class="help-card">
+                                    <div class="help-icon">💬</div>
+                                    <h3>Contacter le Support</h3>
+                                    <p>Obtenez de l'aide de notre équipe de support technique</p>
+                                </div>
+                                <div class="help-card">
+                                    <div class="help-icon">🔧</div>
+                                    <h3>Dépannage</h3>
+                                    <p>Résolvez les problèmes et difficultés courantes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Results Modal -->
+        <div class="modal" id="resultsModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Résultats du Traitement</h3>
+                    <button class="close-btn" onclick="closeResults()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body" id="resultsContent">
+                    <!-- Les résultats seront remplis par JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <h3 id="loadingTitle">Traitement de l'audio en cours...</h3>
+                <p id="loadingMessage">Veuillez patienter pendant que nous traitons votre fichier</p>
+                <div class="loading-progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast Container -->
+        <div class="toast-container" id="toastContainer"></div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
